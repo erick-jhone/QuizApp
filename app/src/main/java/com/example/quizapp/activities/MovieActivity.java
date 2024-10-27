@@ -43,11 +43,6 @@ public class MovieActivity extends AppCompatActivity {
             radioButtonPeterParker.setText("");
 
         }
-
-
-
-
-
     }
 
 
