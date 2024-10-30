@@ -6,17 +6,15 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.quizapp.R;
 
 public class TechActivity extends AppCompatActivity {
 
     private RadioGroup radioGroupTech;
+    private RadioGroup radioGroupFirstComputer;
+    private RadioGroup radioGroupImageToText;
     private View layout;
 
     @Override
@@ -25,24 +23,56 @@ public class TechActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tech);
 
         radioGroupTech = findViewById(R.id.radioGroupTechQuiz);
+        radioGroupFirstComputer = findViewById(R.id.radioGroupFirstComputer);
+        radioGroupImageToText = findViewById(R.id.radioGroupImageToText);
         layout = findViewById(R.id.layoutTech);
 
         radioGroupTech.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-                RadioButton selectedRadioButton = (RadioButton) findViewById(checkedId);
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton selectedRadioButton = findViewById(checkedId);
                 String selectedText = selectedRadioButton.getText().toString();
                 switch (selectedText) {
-                    case "Android":
-                        Toast.makeText(TechActivity.this, "Acertou", Toast.LENGTH_LONG).show();
+                    case "IOS":
+                        Toast.makeText(TechActivity.this, "Acertou!", Toast.LENGTH_LONG).show();
                         break;
                     case "Windows":
+                    case "Android":
                         selectedRadioButton.setText("");
-                        layout.setBackgroundColor(getResources().getColor(R.color.red));
                         break;
-                    case "IOS":
+                }
+            }
+        });
+
+        radioGroupFirstComputer.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton selectedRadioButton = findViewById(checkedId);
+                String selectedText = selectedRadioButton.getText().toString();
+                switch (selectedText) {
+                    case "ENIAC":
+                        Toast.makeText(TechActivity.this, "Acertou!", Toast.LENGTH_LONG).show();
+                        break;
+                    case "UNIVAC":
+                    case "IBM PC":
                         selectedRadioButton.setText("");
-                        layout.setBackgroundColor(getResources().getColor(R.color.red));
+                        break;
+                }
+            }
+        });
+
+        radioGroupImageToText.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton selectedRadioButton = findViewById(checkedId);
+                String selectedText = selectedRadioButton.getText().toString();
+                switch (selectedText) {
+                    case "OCR":
+                        Toast.makeText(TechActivity.this, "Acertou!", Toast.LENGTH_LONG).show();
+                        break;
+                    case "AR":
+                    case "AI":
+                        selectedRadioButton.setText("");
                         break;
                 }
             }

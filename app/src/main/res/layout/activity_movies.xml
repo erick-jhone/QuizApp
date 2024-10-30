@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="353dp"
-        android:layout_height="71dp"
+        android:layout_width="321dp"
+        android:layout_height="60dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="28dp"
         android:text="@string/quem_foi_o_diretor_de_o_senhor_dos_an_is"
@@ -23,22 +23,22 @@
         android:id="@+id/radioButtonPeterCraig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
+        android:onClick="onRadioButtonClicked"
         android:text="Peter Craig"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="onRadioButtonClicked"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <RadioButton
         android:id="@+id/radioButtonPeterJackson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:text="Peter Jackson"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioButtonPeterCraig" />
 
@@ -46,10 +46,10 @@
         android:id="@+id/radioButtonPeterParker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:text="Peter Parker"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioButtonPeterJackson" />
 
