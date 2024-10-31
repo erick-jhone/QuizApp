@@ -16,7 +16,7 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Qual é o ano de fundação do Corinthians?"
+            android:text="@string/qual_o_ano_de_funda_o_do_corinthians"
             android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
             android:layout_marginBottom="8dp" />
 
@@ -29,24 +29,24 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1910" />
+                android:text="@string/_1910" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1920" />
+                android:text="@string/_1920" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1930" />
+                android:text="@string/_1930" />
         </RadioGroup>
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quantos títulos do Campeonato Brasileiro o Corinthians possui?"
+            android:text="@string/quantos_t_tulos_do_campeonato_brasileiro_o_corinthians_possui"
             android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
             android:layout_marginBottom="8dp" />
 
@@ -59,24 +59,24 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5" />
+                android:text="@string/_5" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="7" />
+                android:text="@string/_7" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="8" />
+                android:text="@string/_8" />
         </RadioGroup>
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quem é o maior artilheiro da história do Corinthians?"
+            android:text="@string/quem_o_maior_artilheiro_da_hist_ria_do_corinthians"
             android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
             android:layout_marginBottom="8dp" />
 
@@ -88,17 +88,17 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Zé do Gol" />
+                android:text="@string/romero" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Luan" />
+                android:text="@string/ronaldo_fen_meno" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cláudio Christóvam" />
+                android:text="@string/cl_udio_christ_vam" />
         </RadioGroup>
 
     </LinearLayout>

@@ -16,7 +16,7 @@
             android:id="@+id/textViewDirector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quem foi o diretor de 'O Senhor dos Anéis'?"
+            android:text="@string/quem_foi_o_diretor_de_o_senhor_dos_aneis"
             android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
             android:layout_marginBottom="8dp" />
 
@@ -29,26 +29,26 @@
                 android:id="@+id/radioButtonPeterCraig"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Peter Craig" />
+                android:text="@string/peter_craig" />
 
             <RadioButton
                 android:id="@+id/radioButtonPeterJackson"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Peter Jackson" />
+                android:text="@string/peter_jackson" />
 
             <RadioButton
                 android:id="@+id/radioButtonPeterParker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Peter Parker" />
+                android:text="@string/peter_parker" />
         </RadioGroup>
 
         <TextView
             android:id="@+id/textViewHarryPotter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Qual é o nome da escola de magia em 'Harry Potter'?"
+            android:text="@string/qual_o_nome_da_escola_de_magia_em_harry_potter"
             android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp" />
@@ -62,26 +62,26 @@
                 android:id="@+id/radioButtonHogwarts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hogwarts" />
+                android:text="@string/hogwarts" />
 
             <RadioButton
                 android:id="@+id/radioButtonBeauxbatons"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Beauxbatons" />
+                android:text="@string/beauxbatons" />
 
             <RadioButton
                 android:id="@+id/radioButtonDurmstrang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Durmstrang" />
+                android:text="@string/durmstrang" />
         </RadioGroup>
 
         <TextView
             android:id="@+id/textViewBreakingBad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Qual é o nome do protagonista de 'Breaking Bad'?"
+            android:text="@string/qual_o_nome_do_protagonista_de_breaking_bad"
             android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp" />
@@ -95,19 +95,19 @@
                 android:id="@+id/radioButtonWalterWhite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Walter White" />
+                android:text="@string/walter_white" />
 
             <RadioButton
                 android:id="@+id/radioButtonJessePinkman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jesse Pinkman" />
+                android:text="@string/bilbo_bolseiro" />
 
             <RadioButton
                 android:id="@+id/radioButtonSaulGoodman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Saul Goodman" />
+                android:text="@string/rhaegar_targaryen" />
         </RadioGroup>
 
     </LinearLayout>
