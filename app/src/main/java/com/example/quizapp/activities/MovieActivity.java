@@ -1,49 +1,82 @@
 package com.example.quizapp.activities;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.RadioButton;
-import android.widget.Toast;
+import static com.example.quizapp.utils.CorrectAnswersKeys.ANSWER_CORRECT_FOR_BREAKING_BAD;
+import static com.example.quizapp.utils.CorrectAnswersKeys.ANSWER_CORRECT_FOR_DIRECTOR;
+import static com.example.quizapp.utils.CorrectAnswersKeys.ANSWER_CORRECT_FOR_HARRY_POTTER;
 
-import androidx.activity.EdgeToEdge;
+import android.os.Bundle;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import com.example.quizapp.R;
+import com.example.quizapp.utils.NavigationUtils;
+import com.example.quizapp.utils.QuizUtils;
 
 public class MovieActivity extends AppCompatActivity {
 
-    private RadioButton radioButtonPeterCraig, radioButtonPeterJackson, radioButtonPeterParker;
+    private RadioGroup radioGroupDirector;
+    private RadioGroup radioGroupHarryPotter;
+    private RadioGroup radioGroupBreakingBad;
+    private MovieActivity activityContext;
+    private int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_movies);
+        activityContext = this;
 
-        radioButtonPeterCraig = findViewById(R.id.radioButtonPeterCraig);
-        radioButtonPeterJackson = findViewById(R.id.radioButtonPeterJackson);
-        radioButtonPeterParker = findViewById(R.id.radioButtonPeterParker);
+        initUIComponents();
+        setupListeners();
     }
 
-    public void onRadioButtonClicked(View view) {
-        RadioButton radioButton = (RadioButton) view;
+    private void initUIComponents() {
+        radioGroupDirector = findViewById(R.id.radioGroupDirector);
+        radioGroupHarryPotter = findViewById(R.id.radioGroupHarryPotter);
+        radioGroupBreakingBad = findViewById(R.id.radioGroupBreakingBad);
+    }
 
-        if(view.getId() == R.id.radioButtonPeterJackson){
-            Toast.makeText(this, "Acertou", Toast.LENGTH_LONG).show();
-        }
+    private void setupListeners() {
+        radioGroupDirector.setOnCheckedChangeListener((group, checkedId) -> {
+            RadioButton selectedRadioButton = findViewById(checkedId);
+            String selectedText = selectedRadioButton.getText().toString();
+            if (QuizUtils.checkAnswer(activityContext, selectedText, ANSWER_CORRECT_FOR_DIRECTOR)) score++;
+            QuizUtils.disableRadioGroup(group);
+            checkAllAnsweredAndProceed();
+        });
 
-        if(view.getId() == R.id.radioButtonPeterCraig){
-            radioButtonPeterCraig.setText("");
-        }
+        radioGroupHarryPotter.setOnCheckedChangeListener((group, checkedId) -> {
+            RadioButton selectedRadioButton = findViewById(checkedId);
+            String selectedText = selectedRadioButton.getText().toString();
+            if (QuizUtils.checkAnswer(activityContext, selectedText, ANSWER_CORRECT_FOR_HARRY_POTTER)) score++;
+            QuizUtils.disableRadioGroup(group);
+            checkAllAnsweredAndProceed();
+        });
 
-        if(view.getId() == R.id.radioButtonPeterParker){
-            radioButtonPeterParker.setText("");
+        radioGroupBreakingBad.setOnCheckedChangeListener((group, checkedId) -> {
+            RadioButton selectedRadioButton = findViewById(checkedId);
+            String selectedText = selectedRadioButton.getText().toString();
+            if (QuizUtils.checkAnswer(activityContext, selectedText, ANSWER_CORRECT_FOR_BREAKING_BAD)) score++;
+            QuizUtils.disableRadioGroup(group);
+            checkAllAnsweredAndProceed();
+        });
+    }
 
+    private void checkAllAnsweredAndProceed() {
+        if (isAllQuestionsAnswered()) {
+            launchScoreActivity();
         }
     }
 
+    private boolean isAllQuestionsAnswered() {
+        return radioGroupDirector.getCheckedRadioButtonId() != -1 &&
+                radioGroupHarryPotter.getCheckedRadioButtonId() != -1 &&
+                radioGroupBreakingBad.getCheckedRadioButtonId() != -1;
+    }
 
-
-
+    private void launchScoreActivity() {
+        NavigationUtils.navigateAndPop(activityContext, ScoreActivity.class, "score", score);
+    }
 }

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="appquiz">AppQuiz!</string>
+    <string name="iniciar_novo_quiz">Iniciar novo Quiz</string>
 </resources>

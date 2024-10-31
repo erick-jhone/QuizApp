@@ -2,4 +2,6 @@
     <string name="app_name">QuizApp</string>
     <string name="appquiz">AppQuiz!</string>
     <string name="quem_foi_o_diretor_de_o_senhor_dos_an_is">Quem foi o diretor de o Senhor dos Anéis?</string>
+    <string name="iniciar_novo_quiz">Iniciar novo Quiz</string>
+    <string name="your_score">Your Score: 0</string>
 </resources>
